@@ -1,7 +1,8 @@
 #include <iostream>
 #include <vector>
 
-void insertion_sort(std::vector<int> &data, bool descending = false);
+template<std::totally_ordered T>
+void insertion_sort(std::vector<T> &data, bool descending = false);
 
 int main()
 {
@@ -16,11 +17,12 @@ int main()
     return 0;
 }
 
-void insertion_sort_ascending(std::vector<int> &data)
+template<std::totally_ordered T>
+void insertion_sort_ascending(std::vector<T> &data)
 {
     for (size_t j {1} ; j < data.size(); ++j)
     {   
-        int key {data[j]};
+        T key {data[j]};
 
         size_t i {j - 1};
 
@@ -33,11 +35,12 @@ void insertion_sort_ascending(std::vector<int> &data)
     }
 }
 
-void insertion_sort_descending(std::vector<int> &data)
+template<std::totally_ordered T>
+void insertion_sort_descending(std::vector<T> &data)
 {
     for (size_t j = 1; j < data.size(); ++j)
     {
-        int key = data[j];
+        T key = data[j];
         size_t i = j - 1;
 
         while((i+1) != 0 && data[i] < key)
@@ -48,7 +51,9 @@ void insertion_sort_descending(std::vector<int> &data)
         data[i+ 1] = key;
     }
 }
-void insertion_sort(std::vector<int> &data, bool desc )
+
+template<std::totally_ordered T>
+void insertion_sort(std::vector<T> &data, bool desc )
 {
     if (desc)
     {
