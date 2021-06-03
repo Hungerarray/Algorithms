@@ -1,0 +1,2 @@
+CPPFLAGS += $(flags) -Wall -Wextra
+
