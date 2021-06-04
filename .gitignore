@@ -1,3 +1,12 @@
 .vscode
+
+# files related to latex
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.gz
+
+# executables
 insertion_sort
 linear_search
